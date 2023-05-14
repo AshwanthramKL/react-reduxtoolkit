@@ -3,7 +3,7 @@ import { login, logout } from "../store";
 import { useDispatch, useSelector } from "react-redux/es/exports";
 
 export const Login = () => {
-  const [newUsername, setNewUserName] = useState("");
+  const [newUsername, setNewUserName] = useState<string>("");
   const dispatch = useDispatch();
   const username = useSelector((state: any) => state.user.value.username);
 
@@ -11,7 +11,7 @@ export const Login = () => {
     <>
       <h1>This is the Login page {username}</h1>
       <input
-        onChange={(e) => {
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
           setNewUserName(e.target.value);
         }}
       />
